@@ -1,0 +1,35 @@
+<section class="hero-section" [class.visible]="isVisible">
+    <!-- Animated Background -->
+    <div class="animated-bg">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+  
+    <!-- Content Container -->
+    <div class="hero-content">
+      <!-- Welcome Text -->
+      <h1 class="welcome-text">
+        <span class="text-line">Bienvenue sur votre blog</span>
+        <span class="blog-title">Hello World</span>
+      </h1>
+  
+      <!-- Search Bar -->
+      <div class="search-container">
+        <input 
+          type="text" 
+          [(ngModel)]="searchQuery"
+          placeholder="Recherchez un article..."
+          class="search-input"
+        >
+      </div>
+  
+      <!-- Categories -->
+      <div class="categories-container">
+        <div class="category-badge" *ngFor="let category of categories; let i = index"
+             [style.animation-delay]="i * 0.1 + 's'">
+          {{category}}
+        </div>
+      </div>
+    </div>
+</section>
